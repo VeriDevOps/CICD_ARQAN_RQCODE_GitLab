@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "cicd-arqan-rqcode-gitlab"
+version = "0.1.0"
+description = ""
+authors = ["Dmitry Chermnykh <76gh6rvso@relay.firefox.com>"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-gitlab = "^3.13.0"
+fastapi = "^0.91.0"
+uvicorn = "^0.20.0"
+pydantic = "^1.10.4"
+gunicorn = "^20.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
