@@ -1,0 +1,7 @@
+The following STIGs may be applicable to this issue:
+{% for stig_name, refs in stigs.items() %}
+- {{ stig_name }}
+{%- for ref in refs %}
+  - [{{ ref[0] }}]({{ ref[1] }})
+{%- endfor %}
+{% endfor %}
