@@ -16,13 +16,12 @@ jobs:
       - name: Login to Docker Registry
         uses: docker/login-action@v2
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: "ghcr.io/veridevops/cicd_arqan_rqcode_gitlab:latest"
-          cache-from: type=registry,ref=ghcr.io/veridevops/cicd_arqan_rqcode_gitlab:cache-main
-          cache-to: type=registry,ref=ghcr.io/veridevops/cicd_arqan_rqcode_gitlab:cache-main,mode=max
+          tags: "chermnyx/inno-arqan-gitlab:latest"
+          cache-from: type=registry,ref=chermnyx/inno-arqan-gitlab:cache-main
+          cache-to: type=registry,ref=chermnyx/inno-arqan-gitlab:cache-main,mode=max
