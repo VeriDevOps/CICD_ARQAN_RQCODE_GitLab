@@ -37,6 +37,10 @@ def process_text(text: str, issue_id: int, project: Project = cfg.project):
 
         issue.discussions.create({"body": stig_comment})
 
+        return stig_comment
+
+    return None
+
 
 @app.post("/webhook/{webhook_prefix}")
 async def create_item(
