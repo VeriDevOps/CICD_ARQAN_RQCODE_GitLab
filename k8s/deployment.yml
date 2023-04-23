@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arqan-gitlab
+spec:
+  selector:
+    matchLabels:
+      app: arqan-gitlab
+  template:
+    metadata:
+      labels:
+        app: arqan-gitlab
+    spec:
+      containers:
+        - name: arqan-gitlab
+          image: docker.io/chermnyx/inno-arqan-gitlab:latest
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "1"
+          ports:
+            - containerPort: 8080
+              name: http
+          envFrom:
+            - secretRef:
+                name: arqan-gitlab

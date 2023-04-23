@@ -1,0 +1,9 @@
+resources:
+  - deployment.yml
+  - service.yml
+  - ingress.yml
+
+secretGenerator:
+  - name: arqan-gitlab
+    envs:
+      - .env

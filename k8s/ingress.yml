@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: arqan-gitlab
+  labels:
+    name: arqan-gitlab
+  annotations:
+    traefik.ingress.kubernetes.io/router.tls: "false"
+    traefik.ingress.kubernetes.io/router.entrypoints: "public"
+spec:
+  rules:
+  - host: arqan-gitlab.dimas.cuc.dog
+
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: arqan-gitlab
+            port:
+              number: 8080
