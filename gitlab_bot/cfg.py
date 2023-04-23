@@ -7,6 +7,9 @@ GITLAB_INSTANCE = os.environ['GITLAB_INSTANCE']
 GITLAB_REPO = os.environ['GITLAB_REPO']
 GITLAB_TOKEN = os.environ['GITLAB_TOKEN']
 ARQAN_SERVICES_API = os.environ['ARQAN_SERVICES_API']
+ARQAN_PLATFORM = os.environ['ARQAN_PLATFORM']
+ARQAN_USERNAME = os.environ.get('ARQAN_USERNAME')
+ARQAN_PASSWORD = os.environ.get('ARQAN_PASSWORD')
 PRODUCTION = bool(os.environ.get('PRODUCTION', False))
 
 gl = gitlab.Gitlab(url=GITLAB_INSTANCE, private_token=GITLAB_TOKEN)
