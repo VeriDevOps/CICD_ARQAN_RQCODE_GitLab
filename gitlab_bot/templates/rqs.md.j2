@@ -1,0 +1,11 @@
+The following RQCODE rqurements may be applicable to this issue:
+
+RQCODE Repository: [{{ rqcode_repo }}]({{ rqcode_repo }})
+
+{% if rqs %}
+{% for rq in rqs %}
+- `{{ rq }}`
+{% endfor %}
+{% else %}
+_No RQCODE Requirements found._
+{% endif %}
