@@ -66,7 +66,7 @@ class ObjectAttributes(BaseModel):
     labels: List
     state: str
     severity: str
-    action: str
+    action: Optional[str]
 
 
 class AuthorId(BaseModel):
@@ -115,15 +115,15 @@ class UpdatedAt(BaseModel):
 
 
 class Changes(BaseModel):
-    author_id: AuthorId
-    created_at: CreatedAt
-    description: Description
-    id: Id
-    iid: Iid
-    project_id: ProjectId
-    time_estimate: TimeEstimate
-    title: Title
-    updated_at: UpdatedAt
+    author_id: Optional[AuthorId]
+    created_at: Optional[CreatedAt]
+    description: Optional[Description]
+    id: Optional[Id]
+    iid: Optional[Iid]
+    project_id: Optional[ProjectId]
+    time_estimate: Optional[TimeEstimate]
+    title: Optional[Title]
+    updated_at: Optional[UpdatedAt]
 
 
 class Repository(BaseModel):
@@ -140,7 +140,7 @@ class WebhookIssue(BaseModel):
     project: Project
     object_attributes: ObjectAttributes
     labels: List
-    changes: Changes
+    changes: Optional[Changes]
     repository: Repository
 
 if __name__ == '__main__':

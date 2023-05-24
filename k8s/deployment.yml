@@ -14,6 +14,7 @@ spec:
       containers:
         - name: arqan-gitlab
           image: docker.io/chermnyx/inno-arqan-gitlab:latest
+          imagePullPolicy: Always
           resources:
             limits:
               memory: "512Mi"
